@@ -1,0 +1,20 @@
+Q.Ensure the script checks if a specific file (e.g., myfile.txt) exists in the current directory. 
+            If it exists, print "File exists", otherwise print "File not found".
+
+#!/bin/bash
+
+# Prompt the user for the directory path
+read -p "Enter the directory path: " directory
+
+# Check if the directory exists
+if [ ! -d "$directory" ]; then
+  echo "Error: Directory '$directory' does not exist."
+  exit 1
+fi
+
+# Check for specific file (myfile.txt in this case)
+if [ -f "$directory/myfile.txt" ]; then
+  echo "File exists"
+else
+  echo "File not found"
+fi

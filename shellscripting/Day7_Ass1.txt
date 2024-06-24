@@ -1,0 +1,24 @@
+Q.1.count the number of files and folder present in the directory.  if possible take the directory path from user
+
+
+#!/bin/bash
+
+# Prompt the user for the directory path
+read -p "Enter the directory path: " directory
+
+# Check if the directory exists
+if [ ! -d "$directory" ]; then
+  echo "Error: Directory '$directory' does not exist."
+  exit 1
+fi
+
+# Count files and directories recursively using find and wc
+file_count=$(find "$directory" -type f | wc -l)
+dir_count=$(find "$directory" -type d | wc -l)
+
+# Subtract 2 from the directory count to exclude the current directory and its parent directory
+dir_count=$((dir_count - 2))
+
+# Print the results
+echo "Number of files: $file_count"
+echo "Number of directories: $dir_count"
