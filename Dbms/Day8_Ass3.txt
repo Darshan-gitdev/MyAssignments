@@ -1,0 +1,61 @@
+
+Q. write a query to find the product whose category is electronics 
+             find all the product whose price range is between 5000 and 10000
+             display name and price from product table.
+             display all the electronic category item which has price more than 2000
+             sort the product based on price in descending order.
+             sort the product based on name. 
+             count of product based on category. 
+             display all the product except electronics category.
+
+
+
+CREATE TABLE Product (
+  id INTEGER,
+  Name VARCHAR(255) NOT NULL ,
+  Price DECIMAL NOT NULL ,
+  Manufacturer VARCHAR(50) NOT NULL,
+  Category varchar(50),
+  PRIMARY KEY (id)
+) 
+
+
+INSERT INTO Products(id,Name,Price,Manufacturer,Category) VALUES(1,'SSD',2400,'Seagate','Electronics');
+INSERT INTO Products(id,Name,Price,Manufacturer,Category) VALUES(2,'Memory',1200,'Sony','Electronics');
+INSERT INTO Products(id,Name,Price,Manufacturer,Category) VALUES(3,'Laptop',5000,'Lenovo','Electronics');
+INSERT INTO Products(id,Name,Price,Manufacturer,Category) VALUES(4,'Monitor',5500,'HP',Electronics);
+INSERT INTO Products(id,Name,Price,Manufacturer,Category) VALUES(5,'Table',4000,'greenply','house hold');
+
+
+=> Select id, Name, Price where category ='Electronics' from Product;
+
+select id, Name, Price where price 5000>= and Price<= 1000 from Product;
+
+select Name , Price from Product;
+
+select Name , Price where Category ='Electronics' and price >= 2000 from Product;
+
+Select id, Name, Price where category !='Electronics' from Product;
+
+SELECT * FROM Product ORDER BY price DESC;
+
+SELECT * FROM product ORDER BY Name;
+
+SELECT Category, COUNT(*) AS product_count
+FROM Product
+GROUP BY Category;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

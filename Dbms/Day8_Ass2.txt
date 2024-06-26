@@ -1,0 +1,29 @@
+Q.Write a Sql queries to Perform DDL operation for 
+             product entity. 
+              perform  create table, drop table, alter table, rename 
+              table queries for the product entity. 
+
+
+
+
+CREATE TABLE Product (
+  id INTEGER,
+  Name VARCHAR(255) NOT NULL ,
+  Price DECIMAL NOT NULL ,
+  Manufacturer VARCHAR(50) NOT NULL,
+) 
+
+
+INSERT INTO Products(id,Name,Price,Manufacturer) VALUES(1,'SSD',2400,'Seagate');
+INSERT INTO Products(id,Name,Price,Manufacturer) VALUES(2,'Memory',120,'Sony');
+INSERT INTO Products(id,Name,Price,Manufacturer) VALUES(3,'Laptop',5000,'Lenovo');
+INSERT INTO Products(id,Name,Price,Manufacturer) VALUES(4,'Monitor',5,'HP');
+
+
+drop Product;
+
+
+alter Product add category  varchar(50);
+
+
+rename Product to Products;
