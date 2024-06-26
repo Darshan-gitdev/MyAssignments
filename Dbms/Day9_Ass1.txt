@@ -1,0 +1,22 @@
+Q. Assignment 4: Design a database schema for a library system, 
+       including tables, fields, and constraints like NOT NULL, 
+       UNIQUE, and CHECK. Include primary and foreign keys to establish 
+       relationships between table
+
+
+
+CREATE TABLE Authors (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL
+);
+
+
+CREATE TABLE Books (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(255) NOT NULL,
+  author_id INT FOREIGN KEY REFERENCES Authors(id),
+  isbn VARCHAR(13) UNIQUE,
+  publication_year INT,
+  summary TEXT
+);
+
